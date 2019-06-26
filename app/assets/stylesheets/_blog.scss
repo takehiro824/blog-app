@@ -1,0 +1,28 @@
+.main{
+
+  .blogs{
+    
+    .row{
+  
+      .col.s12.m7{
+        margin-left: 25%;
+        .card{
+          .card-image{
+
+      }
+          .card-content {
+            font-size: 18px;
+            color: black;
+            %p{
+              font-size: 18px;
+              color: black;
+            }
+          }
+          .card-action {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
