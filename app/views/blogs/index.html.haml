@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Sample
+    %style{:href => "./style.css", :type => "text/css"}
+    / Compiled and minified CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=", :src => "https://code.jquery.com/jquery-3.4.1.js"}
+  %body
+    %nav
+      .nav-wrapper
+        %a.brand-logo{:href => "#"} BLOG
+        %ul#nav-mobile.right.hide-on-med-and-down
+          %li
+            = link_to 'Signin', new_user_session_path 
+             
+          %li
+            = link_to 'Signout', destroy_user_session_path, method: :delete 
+          %li
+            = link_to 'new', new_blog_path 
+      .main
+        .blogs
+          = render partial: 'blogs/blog', collection: @blogs
+    
+    
+    %script{:src => "./app.js", :type => "text/javascript"}
+

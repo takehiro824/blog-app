@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Sample
+    %style{:href => "./style.css", :type => "text/css"}
+    / Compiled and minified CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=", :src => "https://code.jquery.com/jquery-3.4.1.js"}
+  %body
+    %nav
+      .nav-wrapper
+        %a.brand-logo{:href => "#"} BLOG
+        %ul#nav-mobile.right.hide-on-med-and-down
+          %li
+            =link_to new_blog_path do
+              new
+          %li
+            =link_to destroy_user_session_path do
+              Signout
+          
+      .main
+        = form_for @blogman do |f|
+          = f.label :body, "Edit Post", class: "blog-form__label"
+          = f.text_field :body, placeholder: "文字を入力してください", class: "blog-form__input"
+          = f.submit "登録する", class: "chat-group-form__action-btn"
+     
